@@ -12,9 +12,8 @@ import com.example.newnoteplayground.models.Note
 
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
-    private var binding: ItemNoteBinding? = null
 
-    inner class NoteViewHolder(itemBinding: ItemNoteBinding) :
+    inner class NoteViewHolder(val itemBinding: ItemNoteBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
 
     }
@@ -34,21 +33,22 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     val differ = AsyncListDiffer(this, differCallback)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
-        binding = ItemNoteBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
+        return NoteViewHolder(
+            ItemNoteBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
         )
-        return NoteViewHolder(binding!!)
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val currentNote = differ.currentList[position]
 
-        holder.itemView.apply {
-            binding?.tvNoteBody?.text = currentNote.noteBody
-            binding?.tvNoteTitle?.text = currentNote.noteTitle
-        }.setOnClickListener { mView ->
+        holder.itemBinding.tvNoteBody.text = currentNote.noteBody
+        holder.itemBinding.tvNoteTitle.text = currentNote.noteTitle
+
+        holder.itemView.setOnClickListener { mView ->
             val direction = HomeFragmentDirections
                 .actionHomeFragmentToUpdateNoteFragment(currentNote)
             mView.findNavController().navigate(direction)
