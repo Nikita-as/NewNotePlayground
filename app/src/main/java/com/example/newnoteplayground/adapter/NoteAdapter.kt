@@ -2,10 +2,12 @@ package com.example.newnoteplayground.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newnoteplayground.databinding.ItemNoteBinding
+import com.example.newnoteplayground.fragments.HomeFragmentDirections
 import com.example.newnoteplayground.models.Note
 
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
@@ -46,6 +48,10 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
         holder.itemView.apply {
             binding?.tvNoteBody?.text = currentNote.noteBody
             binding?.tvNoteTitle?.text = currentNote.noteTitle
+        }.setOnClickListener { mView ->
+            val direction = HomeFragmentDirections
+                .actionHomeFragmentToUpdateNoteFragment(currentNote)
+            mView.findNavController().navigate(direction)
         }
     }
 
