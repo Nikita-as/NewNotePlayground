@@ -3,12 +3,21 @@ package com.example.newnoteplayground.fragments
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.newnoteplayground.MainActivity
 import com.example.newnoteplayground.R
+import com.example.newnoteplayground.adapter.NoteAdapter
 import com.example.newnoteplayground.databinding.FragmentHomeBinding
+import com.example.newnoteplayground.models.Note
+import com.example.newnoteplayground.viewmodel.NoteViewModel
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private lateinit var noteViewModel: NoteViewModel
+    private lateinit var noteAdapter: NoteAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +36,45 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             false
         )
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        noteViewModel = (activity as MainActivity).noteViewModel
+        setUpRecyclerView()
+        binding.fabAddNote.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_newNoteFragment)
+        }
+    }
+
+    private fun setUpRecyclerView() {
+        noteAdapter = NoteAdapter()
+
+        binding.recyclerView.apply {
+            adapter = noteAdapter
+            layoutManager = StaggeredGridLayoutManager(
+                2,
+                StaggeredGridLayoutManager.VERTICAL
+            )
+            setHasFixedSize(true)
+        }
+        activity?.let {
+            noteViewModel.getAllNote().observe(viewLifecycleOwner, Observer { noteList ->
+                noteAdapter.differ.submitList(noteList)
+                updateUI(noteList)
+
+            })
+        }
+    }
+
+    private fun updateUI(noteList: List<Note>) {
+        if (noteList.isNotEmpty()) {
+            binding.recyclerView.visibility = View.VISIBLE
+            binding.tvNoNote.visibility = View.GONE
+        } else {
+            binding.recyclerView.visibility = View.GONE
+            binding.tvNoNote.visibility = View.VISIBLE
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
