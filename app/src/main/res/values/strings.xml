@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NewNotePlayground</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="noteIsEmpty">Пока заметок нет</string>
+    <string name="image">image</string>
+    <string name="bersyte">bersyte</string>
+    <string name="titleNote">Введите заголовок заметки</string>
+    <string name="bodyNote">Текст заметки</string>
+    <string name="search">Search</string>
+    <string name="new_note">NewNote</string>
+</resources>
