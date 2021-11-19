@@ -1,4 +1,4 @@
-package com.example.newnoteplayground.fragments
+package com.example.newnoteplayground.presentation.fragments
 
 import android.os.Bundle
 import android.view.*
@@ -9,10 +9,10 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.newnoteplayground.MainActivity
 import com.example.newnoteplayground.R
-import com.example.newnoteplayground.adapter.NoteAdapter
+import com.example.newnoteplayground.presentation.adapter.NoteAdapter
 import com.example.newnoteplayground.databinding.FragmentHomeBinding
-import com.example.newnoteplayground.models.Note
-import com.example.newnoteplayground.viewmodel.NoteViewModel
+import com.example.newnoteplayground.domain.models.Note
+import com.example.newnoteplayground.presentation.viewmodel.NoteViewModel
 
 class HomeFragment : Fragment(R.layout.fragment_home),
     SearchView.OnQueryTextListener {

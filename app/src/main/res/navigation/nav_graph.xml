@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.newnoteplayground.fragments.HomeFragment"
+        android:name="com.example.newnoteplayground.presentation.fragments.HomeFragment"
         android:label="Notes"
         tools:layout="@layout/fragment_home">
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/newNoteFragment"
-        android:name="com.example.newnoteplayground.fragments.NewNoteFragment"
+        android:name="com.example.newnoteplayground.presentation.fragments.NewNoteFragment"
         android:label="New Note"
         tools:layout="@layout/fragment_new_note">
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/updateNoteFragment"
-        android:name="com.example.newnoteplayground.fragments.UpdateNoteFragment"
+        android:name="com.example.newnoteplayground.presentation.fragments.UpdateNoteFragment"
         android:label="Update Note"
         tools:layout="@layout/fragment_update_note">
         <action
@@ -52,7 +52,7 @@
             app:popExitAnim="@anim/slide_out_right" />
         <argument
             android:name="note"
-            app:argType="com.example.newnoteplayground.models.Note"
+            app:argType="com.example.newnoteplayground.domain.models.Note"
             app:nullable="true" />
     </fragment>
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.newnoteplayground.fragments
+package com.example.newnoteplayground.presentation.fragments
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -9,9 +9,9 @@ import androidx.navigation.fragment.navArgs
 import com.example.newnoteplayground.MainActivity
 import com.example.newnoteplayground.R
 import com.example.newnoteplayground.databinding.FragmentUpdateNoteBinding
-import com.example.newnoteplayground.helper.toast
-import com.example.newnoteplayground.models.Note
-import com.example.newnoteplayground.viewmodel.NoteViewModel
+import com.example.newnoteplayground.presentation.util.toast
+import com.example.newnoteplayground.domain.models.Note
+import com.example.newnoteplayground.presentation.viewmodel.NoteViewModel
 
 class UpdateNoteFragment : Fragment() {
 

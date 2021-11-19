@@ -1,4 +1,4 @@
-package com.example.newnoteplayground.adapter
+package com.example.newnoteplayground.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newnoteplayground.databinding.ItemNoteBinding
-import com.example.newnoteplayground.fragments.HomeFragmentDirections
-import com.example.newnoteplayground.models.Note
+import com.example.newnoteplayground.domain.models.Note
+import com.example.newnoteplayground.presentation.fragments.HomeFragmentDirections
 
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 

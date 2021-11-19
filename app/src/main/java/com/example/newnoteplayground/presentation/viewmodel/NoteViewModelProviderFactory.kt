@@ -1,9 +1,9 @@
-package com.example.newnoteplayground.viewmodel
+package com.example.newnoteplayground.presentation.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.newnoteplayground.repository.NoteRepository
+import com.example.newnoteplayground.domain.repository.NoteRepository
 
 class NoteViewModelProviderFactory(
     private val app: Application,

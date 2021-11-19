@@ -1,4 +1,4 @@
-package com.example.newnoteplayground.fragments
+package com.example.newnoteplayground.presentation.fragments
 
 import android.os.Bundle
 import android.view.*
@@ -7,9 +7,9 @@ import androidx.navigation.findNavController
 import com.example.newnoteplayground.MainActivity
 import com.example.newnoteplayground.R
 import com.example.newnoteplayground.databinding.FragmentNewNoteBinding
-import com.example.newnoteplayground.helper.toast
-import com.example.newnoteplayground.models.Note
-import com.example.newnoteplayground.viewmodel.NoteViewModel
+import com.example.newnoteplayground.presentation.util.toast
+import com.example.newnoteplayground.domain.models.Note
+import com.example.newnoteplayground.presentation.viewmodel.NoteViewModel
 import com.google.android.material.snackbar.Snackbar
 
 class NewNoteFragment : Fragment(R.layout.fragment_new_note) {

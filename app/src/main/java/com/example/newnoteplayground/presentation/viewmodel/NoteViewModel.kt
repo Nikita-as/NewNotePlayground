@@ -1,10 +1,10 @@
-package com.example.newnoteplayground.viewmodel
+package com.example.newnoteplayground.presentation.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.newnoteplayground.models.Note
-import com.example.newnoteplayground.repository.NoteRepository
+import com.example.newnoteplayground.domain.models.Note
+import com.example.newnoteplayground.domain.repository.NoteRepository
 import kotlinx.coroutines.launch
 
 class NoteViewModel(

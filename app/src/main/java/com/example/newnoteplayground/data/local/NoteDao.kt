@@ -1,8 +1,8 @@
-package com.example.newnoteplayground.database
+package com.example.newnoteplayground.data.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.newnoteplayground.models.Note
+import com.example.newnoteplayground.domain.models.Note
 
 
 @Dao

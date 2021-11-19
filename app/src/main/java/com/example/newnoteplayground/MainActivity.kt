@@ -3,11 +3,11 @@ package com.example.newnoteplayground
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.newnoteplayground.database.NoteDatabase
+import com.example.newnoteplayground.data.local.NoteDatabase
 import com.example.newnoteplayground.databinding.ActivityMainBinding
-import com.example.newnoteplayground.repository.NoteRepository
-import com.example.newnoteplayground.viewmodel.NoteViewModel
-import com.example.newnoteplayground.viewmodel.NoteViewModelProviderFactory
+import com.example.newnoteplayground.domain.repository.NoteRepository
+import com.example.newnoteplayground.presentation.viewmodel.NoteViewModel
+import com.example.newnoteplayground.presentation.viewmodel.NoteViewModelProviderFactory
 
 class MainActivity : AppCompatActivity() {
 

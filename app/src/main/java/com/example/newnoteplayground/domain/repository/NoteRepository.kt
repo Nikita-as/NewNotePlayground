@@ -1,7 +1,7 @@
-package com.example.newnoteplayground.repository
+package com.example.newnoteplayground.domain.repository
 
-import com.example.newnoteplayground.database.NoteDatabase
-import com.example.newnoteplayground.models.Note
+import com.example.newnoteplayground.data.local.NoteDatabase
+import com.example.newnoteplayground.domain.models.Note
 
 class NoteRepository(private val database: NoteDatabase) {
 

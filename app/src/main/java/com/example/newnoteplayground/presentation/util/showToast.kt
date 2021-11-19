@@ -1,4 +1,4 @@
-package com.example.newnoteplayground.helper
+package com.example.newnoteplayground.presentation.util
 
 import android.content.Context
 import android.widget.Toast

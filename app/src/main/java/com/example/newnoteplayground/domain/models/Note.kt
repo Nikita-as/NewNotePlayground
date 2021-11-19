@@ -1,4 +1,4 @@
-package com.example.newnoteplayground.models
+package com.example.newnoteplayground.domain.models
 
 import android.os.Parcelable
 import androidx.room.Entity
@@ -9,7 +9,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Note(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val id: Int? = null,
     val noteTitle: String,
     val noteBody: String
 ) : Parcelable
